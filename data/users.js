@@ -14,6 +14,7 @@ let users = new Map();
  * In a real application, this would come from your actual user database
  */
 const mockUsers = [
+  // NYC Area Users
   { username: 'Sarah_M', latitude: 40.7580, longitude: -73.9855, lastSeen: new Date().toISOString() },
   { username: 'Emma_K', latitude: 40.7520, longitude: -73.9860, lastSeen: new Date().toISOString() },
   { username: 'Jessica_L', latitude: 40.7610, longitude: -73.9840, lastSeen: new Date().toISOString() },
@@ -21,7 +22,31 @@ const mockUsers = [
   { username: 'Michelle_T', latitude: 40.7530, longitude: -73.9880, lastSeen: new Date().toISOString() },
   { username: 'Lisa_H', latitude: 40.7560, longitude: -73.9870, lastSeen: new Date().toISOString() },
   { username: 'Rachel_B', latitude: 40.7500, longitude: -73.9900, lastSeen: new Date().toISOString() },
-  { username: 'Nicole_W', latitude: 40.7570, longitude: -73.9830, lastSeen: new Date().toISOString() }
+  { username: 'Nicole_W', latitude: 40.7570, longitude: -73.9830, lastSeen: new Date().toISOString() },
+  
+  // Lucknow Rajajipuram Area Volunteers
+  { username: 'Priya_Sharma', latitude: 26.8553, longitude: 80.8805, lastSeen: new Date().toISOString() },
+  { username: 'Anita_Gupta', latitude: 26.8565, longitude: 80.8820, lastSeen: new Date().toISOString() },
+  { username: 'Meera_Singh', latitude: 26.8540, longitude: 80.8790, lastSeen: new Date().toISOString() },
+  { username: 'Ritu_Agarwal', latitude: 26.8575, longitude: 80.8815, lastSeen: new Date().toISOString() },
+  { username: 'Sunita_Verma', latitude: 26.8520, longitude: 80.8785, lastSeen: new Date().toISOString() },
+  { username: 'Kavita_Yadav', latitude: 26.8590, longitude: 80.8825, lastSeen: new Date().toISOString() },
+  { username: 'Neha_Mishra', latitude: 26.8510, longitude: 80.8775, lastSeen: new Date().toISOString() },
+  { username: 'Pooja_Tiwari', latitude: 26.8580, longitude: 80.8810, lastSeen: new Date().toISOString() },
+  { username: 'Deepika_Pandey', latitude: 26.8530, longitude: 80.8795, lastSeen: new Date().toISOString() },
+  { username: 'Shweta_Dubey', latitude: 26.8560, longitude: 80.8800, lastSeen: new Date().toISOString() },
+  
+  // Punjab SLIET Longowal Area Volunteers
+  { username: 'Simran_Kaur', latitude: 30.4726, longitude: 76.5269, lastSeen: new Date().toISOString() },
+  { username: 'Jaspreet_Singh', latitude: 30.4735, longitude: 76.5280, lastSeen: new Date().toISOString() },
+  { username: 'Manpreet_Kaur', latitude: 30.4718, longitude: 76.5255, lastSeen: new Date().toISOString() },
+  { username: 'Harpreet_Singh', latitude: 30.4740, longitude: 76.5285, lastSeen: new Date().toISOString() },
+  { username: 'Gurpreet_Kaur', latitude: 30.4710, longitude: 76.5250, lastSeen: new Date().toISOString() },
+  { username: 'Rajveer_Singh', latitude: 30.4745, longitude: 76.5290, lastSeen: new Date().toISOString() },
+  { username: 'Navjot_Kaur', latitude: 30.4705, longitude: 76.5245, lastSeen: new Date().toISOString() },
+  { username: 'Sukhvir_Singh', latitude: 30.4750, longitude: 76.5295, lastSeen: new Date().toISOString() },
+  { username: 'Jaskiran_Kaur', latitude: 30.4715, longitude: 76.5260, lastSeen: new Date().toISOString() },
+  { username: 'Arshdeep_Singh', latitude: 30.4730, longitude: 76.5275, lastSeen: new Date().toISOString() }
 ];
 
 /**

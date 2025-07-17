@@ -101,6 +101,29 @@ Preferred communication style: Simple, everyday language.
 - **path**: File path utilities
 - **fs**: File system operations for CSV reading
 
+## Recent Changes
+
+### July 17, 2025 - Geographic Data Expansion
+- **Added Crime Data**: Extended crime database from 20 to 50 records
+  - Lucknow Rajajipuram area: 15 new crime incidents (Theft, Assault, Robbery, Vandalism, Harassment, Burglary, Drug Related)
+  - Punjab SLIET Longowal area: 15 new crime incidents with similar crime types
+  - Coordinates: Lucknow (26.85xx, 80.88xx), Punjab (30.47xx, 76.52xx)
+
+- **Added Volunteer Network**: Expanded user base from 8 to 28 volunteers
+  - Lucknow area: 10 female volunteers with Indian names (Priya_Sharma, Anita_Gupta, etc.)
+  - Punjab area: 10 volunteers with Sikh names (Simran_Kaur, Jaspreet_Singh, etc.)
+  - Strategic placement within 500m radius for optimal SOS response coverage
+
+- **Successful Integration Testing**: 
+  - Lucknow SOS test: Found 8 nearby volunteers within 60-365m range
+  - Punjab SOS test: Found 10 nearby volunteers within 45-367m range
+  - Real-time dashboard updates confirmed working with live React Native app connections
+
+- **Map Migration**: Successfully replaced Google Maps with OpenStreetMap using Leaflet.js
+  - Resolved billing restrictions and API key issues
+  - Maintained full functionality: markers, popups, real-time updates
+  - Dashboard fully operational with crime zone visualization
+
 ## Deployment Strategy
 
 ### Environment Configuration
