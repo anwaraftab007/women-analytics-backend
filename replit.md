@@ -104,10 +104,11 @@ Preferred communication style: Simple, everyday language.
 ## Recent Changes
 
 ### July 17, 2025 - Geographic Data Expansion
-- **Added Crime Data**: Extended crime database from 20 to 50 records
-  - Lucknow Rajajipuram area: 15 new crime incidents (Theft, Assault, Robbery, Vandalism, Harassment, Burglary, Drug Related)
-  - Punjab SLIET Longowal area: 15 new crime incidents with similar crime types
-  - Coordinates: Lucknow (26.85xx, 80.88xx), Punjab (30.47xx, 76.52xx)
+- **Added Crime Data**: Extended crime database from 20 to 81 records
+  - Lucknow Rajajipuram area: 31 new crime incidents distributed around volunteer locations
+  - Punjab SLIET Longowal area: 30 new crime incidents near campus volunteers
+  - Crime types: Theft, Assault, Robbery, Vandalism, Harassment, Burglary, Drug Related
+  - Strategic placement: 29 crimes within 500m radius of Lucknow volunteers, 30 within Punjab area
 
 - **Added Volunteer Network**: Expanded user base from 8 to 28 volunteers
   - Lucknow area: 10 female volunteers with Indian names (Priya_Sharma, Anita_Gupta, etc.)
