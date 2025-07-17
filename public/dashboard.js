@@ -22,15 +22,10 @@ class WomenSafetyDashboard {
         this.loadCrimeData();
         this.updateDashboardStats();
         
-        // Initialize map when page loads
-        if (typeof L !== 'undefined') {
+        // Initialize map after DOM and scripts are loaded
+        setTimeout(() => {
             this.initializeMap();
-        } else {
-            // Wait for Leaflet to load
-            window.addEventListener('load', () => {
-                this.initializeMap();
-            });
-        }
+        }, 100);
     }
 
     /**
@@ -580,13 +575,7 @@ class WomenSafetyDashboard {
     }
 }
 
-// Global function for Google Maps callback
-function initMap() {
-    console.log('Google Maps API loaded');
-    if (window.dashboard) {
-        window.dashboard.initializeMap();
-    }
-}
+// Remove Google Maps callback - no longer needed
 
 // Initialize dashboard when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
