@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women Safety Analytics Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <h1><i class="fas fa-shield-alt"></i> Women Safety Analytics Dashboard</h1>
+            <div class="status-indicators">
+                <div class="status-item">
+                    <span class="status-label">Connection:</span>
+                    <span id="connection-status" class="status-value disconnected">Disconnected</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Active Alerts:</span>
+                    <span id="active-alerts" class="status-value">0</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Last Update:</span>
+                    <span id="last-update" class="status-value">Never</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="dashboard-content">
+            <!-- Map Section -->
+            <div class="map-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-map-marked-alt"></i> Live Map</h2>
+                    <div class="map-controls">
+                        <button id="toggle-crime-zones" class="btn btn-secondary">
+                            <i class="fas fa-eye"></i> Toggle Crime Zones
+                        </button>
+                        <button id="center-map" class="btn btn-secondary">
+                            <i class="fas fa-crosshairs"></i> Center Map
+                        </button>
+                    </div>
+                </div>
+                <div id="map" class="map-container"></div>
+            </div>
+
+            <!-- Alerts Panel -->
+            <div class="alerts-panel">
+                <div class="section-header">
+                    <h2><i class="fas fa-exclamation-triangle"></i> Recent SOS Alerts</h2>
+                    <button id="clear-alerts" class="btn btn-danger">
+                        <i class="fas fa-trash"></i> Clear All
+                    </button>
+                </div>
+                <div id="alerts-list" class="alerts-list">
+                    <div class="no-alerts">
+                        <i class="fas fa-info-circle"></i>
+                        <p>No SOS alerts received yet</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistics Section -->
+        <div class="stats-section">
+            <div class="stats-card">
+                <h3><i class="fas fa-chart-bar"></i> Crime Statistics</h3>
+                <div id="crime-stats" class="stats-content">
+                    <div class="loading">Loading crime data...</div>
+                </div>
+            </div>
+            <div class="stats-card">
+                <h3><i class="fas fa-users"></i> System Status</h3>
+                <div id="system-stats" class="stats-content">
+                    <div class="stat-item">
+                        <span class="stat-label">Dashboard Connections:</span>
+                        <span class="stat-value" id="dashboard-connections">1</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Total Alerts Today:</span>
+                        <span class="stat-value" id="alerts-today">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alert Modal -->
+    <div id="alert-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-exclamation-triangle"></i> New SOS Alert</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="modal-alert-details"></div>
+            </div>
+            <div class="modal-footer">
+                <button id="acknowledge-alert" class="btn btn-primary">Acknowledge</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- OpenStreetMap with Leaflet.js as fallback -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Dashboard Script -->
+    <script src="dashboard.js"></script>
+</body>
+</html>
