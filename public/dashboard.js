@@ -102,8 +102,8 @@ class WomenSafetyDashboard {
      * Initialize OpenStreetMap with Leaflet.js
      */
     initializeMap() {
-        // Initialize Leaflet map
-        this.map = L.map('map').setView([40.7589, -73.9851], 13);
+        // Initialize Leaflet map centered on Lucknow area (current testing location)
+        this.map = L.map('map').setView([26.8550, 80.8800], 13);
         
         // Add OpenStreetMap tiles
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -112,9 +112,54 @@ class WomenSafetyDashboard {
         
         console.log('OpenStreetMap initialized with Leaflet.js');
         
+        // Try to get user's current location
+        this.getCurrentLocation();
+        
         // Load crime zones if data is available
         if (this.crimeData.length > 0) {
             this.addCrimeMarkers();
+        }
+    }
+
+    /**
+     * Get user's current location and center map
+     */
+    getCurrentLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    const lat = position.coords.latitude;
+                    const lng = position.coords.longitude;
+                    
+                    // Center map on user's location
+                    this.map.setView([lat, lng], 15);
+                    
+                    // Add a marker for current location
+                    const currentLocationIcon = L.divIcon({
+                        className: 'current-location-marker',
+                        html: '<div style="background: #4285f4; width: 15px; height: 15px; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 6px rgba(0,0,0,0.3);"></div>',
+                        iconSize: [21, 21],
+                        iconAnchor: [10, 10]
+                    });
+                    
+                    L.marker([lat, lng], { icon: currentLocationIcon })
+                        .addTo(this.map)
+                        .bindPopup('Your Current Location');
+                        
+                    console.log('Map centered on current location:', lat, lng);
+                },
+                (error) => {
+                    console.log('Geolocation not available, using default location (Lucknow)');
+                    // Fallback remains on Lucknow area
+                },
+                {
+                    enableHighAccuracy: true,
+                    timeout: 5000,
+                    maximumAge: 60000
+                }
+            );
+        } else {
+            console.log('Geolocation not supported by browser, using default location (Lucknow)');
         }
     }
 
@@ -340,11 +385,27 @@ class WomenSafetyDashboard {
     }
 
     /**
-     * Center map on default location
+     * Center map on current location or default to Lucknow area
      */
     centerMap() {
         if (this.map) {
-            this.map.setView([40.7589, -73.9851], 13);
+            // Try to get current location first
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const lat = position.coords.latitude;
+                        const lng = position.coords.longitude;
+                        this.map.setView([lat, lng], 15);
+                    },
+                    (error) => {
+                        // Fallback to Lucknow area if geolocation fails
+                        this.map.setView([26.8550, 80.8800], 13);
+                    }
+                );
+            } else {
+                // Fallback to Lucknow area if geolocation not supported
+                this.map.setView([26.8550, 80.8800], 13);
+            }
         }
     }
 
