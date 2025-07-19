@@ -103,27 +103,29 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
-### July 17, 2025 - Geographic Data Expansion
-- **Added Crime Data**: Extended crime database from 20 to 81 records
-  - Lucknow Rajajipuram area: 31 new crime incidents distributed around volunteer locations
-  - Punjab SLIET Longowal area: 30 new crime incidents near campus volunteers
+### July 17-19, 2025 - Geographic Data Expansion
+- **Added Crime Data**: Extended crime database from 20 to 96 records
+  - Lucknow Rajajipuram area: 31 crime incidents distributed around volunteer locations
+  - Punjab SLIET Longowal area: 30 crime incidents near campus volunteers
+  - User Location area (26.8467, 80.9462): 15 new crime incidents for local testing
   - Crime types: Theft, Assault, Robbery, Vandalism, Harassment, Burglary, Drug Related
-  - Strategic placement: 29 crimes within 500m radius of Lucknow volunteers, 30 within Punjab area
 
-- **Added Volunteer Network**: Expanded user base from 8 to 28 volunteers
-  - Lucknow area: 10 female volunteers with Indian names (Priya_Sharma, Anita_Gupta, etc.)
-  - Punjab area: 10 volunteers with Sikh names (Simran_Kaur, Jaspreet_Singh, etc.)
+- **Added Volunteer Network**: Expanded user base from 8 to 38 volunteers
+  - Lucknow Rajajipuram: 10 female volunteers (Priya_Sharma, Anita_Gupta, etc.)
+  - Punjab SLIET: 10 volunteers with Sikh names (Simran_Kaur, Jaspreet_Singh, etc.)
+  - User Location area: 10 new volunteers (Surbhi_Patel, Aditi_Srivastava, etc.)
   - Strategic placement within 500m radius for optimal SOS response coverage
 
 - **Successful Integration Testing**: 
   - Lucknow SOS test: Found 8 nearby volunteers within 60-365m range
   - Punjab SOS test: Found 10 nearby volunteers within 45-367m range
+  - User Location SOS test: Found 10 nearby volunteers within 30-149m range
   - Real-time dashboard updates confirmed working with live React Native app connections
 
 - **Map Migration**: Successfully replaced Google Maps with OpenStreetMap using Leaflet.js
   - Resolved billing restrictions and API key issues
-  - Maintained full functionality: markers, popups, real-time updates
-  - Dashboard fully operational with crime zone visualization
+  - Map auto-centers on user's current location via geolocation
+  - Dashboard fully operational with crime zone visualization and live current location detection
 
 ## Deployment Strategy
 

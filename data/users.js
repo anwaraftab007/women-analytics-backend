@@ -46,7 +46,19 @@ const mockUsers = [
   { username: 'Navjot_Kaur', latitude: 30.4705, longitude: 76.5245, lastSeen: new Date().toISOString() },
   { username: 'Sukhvir_Singh', latitude: 30.4750, longitude: 76.5295, lastSeen: new Date().toISOString() },
   { username: 'Jaskiran_Kaur', latitude: 30.4715, longitude: 76.5260, lastSeen: new Date().toISOString() },
-  { username: 'Arshdeep_Singh', latitude: 30.4730, longitude: 76.5275, lastSeen: new Date().toISOString() }
+  { username: 'Arshdeep_Singh', latitude: 30.4730, longitude: 76.5275, lastSeen: new Date().toISOString() },
+  
+  // Near User Location (26.8467, 80.9462) - 10 volunteers
+  { username: 'Surbhi_Patel', latitude: 26.8465, longitude: 80.9460, lastSeen: new Date().toISOString() },
+  { username: 'Aditi_Srivastava', latitude: 26.8470, longitude: 80.9465, lastSeen: new Date().toISOString() },
+  { username: 'Nidhi_Joshi', latitude: 26.8463, longitude: 80.9458, lastSeen: new Date().toISOString() },
+  { username: 'Rachna_Tripathi', latitude: 26.8472, longitude: 80.9467, lastSeen: new Date().toISOString() },
+  { username: 'Swati_Awasthi', latitude: 26.8460, longitude: 80.9455, lastSeen: new Date().toISOString() },
+  { username: 'Manju_Dixit', latitude: 26.8475, longitude: 80.9470, lastSeen: new Date().toISOString() },
+  { username: 'Geeta_Sinha', latitude: 26.8458, longitude: 80.9452, lastSeen: new Date().toISOString() },
+  { username: 'Kiran_Rastogi', latitude: 26.8477, longitude: 80.9472, lastSeen: new Date().toISOString() },
+  { username: 'Divya_Chandra', latitude: 26.8462, longitude: 80.9463, lastSeen: new Date().toISOString() },
+  { username: 'Poonam_Shukla', latitude: 26.8468, longitude: 80.9468, lastSeen: new Date().toISOString() }
 ];
 
 /**
