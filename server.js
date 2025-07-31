@@ -71,6 +71,26 @@ app.get('/health', (req, res) => {
   });
 });
 
+// Ping endpoint to keep server alive
+app.get('/ping', (req, res) => {
+  res.json({
+    status: 'alive',
+    message: 'Server is running',
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime(),
+    connections: dashboardSockets.size
+  });
+});
+
+// Alternative ping endpoint (common variations)
+app.get('/api/ping', (req, res) => {
+  res.json({
+    pong: true,
+    timestamp: new Date().toISOString(),
+    server: 'Women Safety Analytics Backend'
+  });
+});
+
 // Error handling middleware
 app.use((error, req, res, next) => {
   logger.error('Unhandled error:', error);
